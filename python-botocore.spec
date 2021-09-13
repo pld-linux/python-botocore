@@ -3,7 +3,7 @@
 %bcond_without	doc	# Sphinx documentation
 %bcond_with	tests	# unit tests (die with MemoryError)
 %bcond_without	python2 # CPython 2.x module
-%bcond_without	python3 # CPython 3.x module
+%bcond_with	python3 # CPython 3.x module
 
 Summary:	Low-level, data-driven core of boto 3
 Summary(pl.UTF-8):	Niskopoziomowy, oparty na danych rdzeń boto 3
