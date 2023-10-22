@@ -8,13 +8,14 @@
 Summary:	Low-level, data-driven core of boto 3
 Summary(pl.UTF-8):	Niskopoziomowy, oparty na danych rdzeń boto 3
 Name:		python-botocore
-Version:	1.20.5
-Release:	2
+# keep 1.20.x here for python2 support
+Version:	1.20.112
+Release:	1
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/botocore/
 Source0:	https://files.pythonhosted.org/packages/source/b/botocore/botocore-%{version}.tar.gz
-# Source0-md5:	22e2131b194cceb09adda93cd7033496
+# Source0-md5:	ac46f798134f5deb5961ed33d836cf1b
 URL:		https://pypi.org/project/botocore/
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.7
@@ -22,11 +23,14 @@ BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-behave >= 1.2.5
 BuildRequires:	python-dateutil >= 2.1
+BuildRequires:	python-dateutil < 3
 BuildRequires:	python-jmespath >= 0.7.1
+BuildRequires:	python-jmespath < 1
 BuildRequires:	python-jsonschema >= 2.5.1
 BuildRequires:	python-mock >= 1.3.0
 BuildRequires:	python-nose >= 1.3.7
 BuildRequires:	python-urllib3 >= 1.25.4
+BuildRequires:	python-urllib3 < 1.27
 %endif
 %endif
 %if %{with python3}
@@ -35,10 +39,13 @@ BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-behave >= 1.2.5
 BuildRequires:	python3-dateutil >= 2.1
+BuildRequires:	python3-dateutil < 3
 BuildRequires:	python3-jmespath >= 0.7.1
+BuildRequires:	python3-jmespath < 1
 BuildRequires:	python3-jsonschema >= 2.5.1
 BuildRequires:	python3-nose >= 1.3.7
 BuildRequires:	python3-urllib3 >= 1.25.4
+BuildRequires:	python3-urllib3 < 1.27
 %endif
 %endif
 BuildRequires:	rpm-pythonprov
@@ -46,6 +53,7 @@ BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with doc}
 BuildRequires:	python3-guzzle_sphinx_theme
 BuildRequires:	python3-jmespath >= 0.7.1
+BuildRequires:	python3-jmespath < 1
 BuildRequires:	sphinx-pdg-3
 %endif
 Requires:	python-modules >= 1:2.7
